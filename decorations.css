@@ -1,0 +1,28 @@
+/* Original tournament texture and vector marker drawings. No content or type changes. */
+body{position:relative;isolation:isolate}
+.page-art{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none;user-select:none;-webkit-mask-image:linear-gradient(90deg,#000 0%,#000 12%,transparent 30%,transparent 86%,#000 100%);mask-image:linear-gradient(90deg,#000 0%,#000 12%,transparent 30%,transparent 86%,#000 100%)}
+.tyre{position:absolute;display:block;background:url('assets/tyre-track.svg') center top/100% auto repeat-y;transform-origin:center;pointer-events:none}
+.tyre-left{width:255px;height:1350px;left:calc((100vw - 1280px)/2 - 116px);top:68px;transform:rotate(15deg);opacity:.86}
+.tyre-right{width:265px;height:1300px;right:-112px;top:-160px;transform:rotate(-24deg);opacity:.78}
+body:after{content:'';position:fixed;inset:0;background:url('assets/grain.svg') 0 0/180px 180px;opacity:.035;pointer-events:none;z-index:20;mix-blend-mode:screen}
+.header{background:rgba(13,16,12,.97)}
+.header:after{content:'';position:absolute;left:0;bottom:-2px;right:0;height:3px;background:linear-gradient(90deg,transparent 0%,#62654a55 15%,#62654a25 42%,transparent 60%);transform:rotate(-.13deg);pointer-events:none}
+.desktop-toc{position:sticky}
+.desktop-toc:after{content:'';display:block;width:154px;height:120px;margin:36px 0 0 7px;background:url('assets/marker-sketch.svg') center/contain no-repeat;opacity:.69;transform:rotate(-8deg);pointer-events:none}
+.toc-label{display:inline-block;position:relative}
+.toc-label:after{content:'';position:absolute;left:-4px;right:-10px;bottom:-8px;height:6px;background:url('assets/paint-underline.svg') center/100% 100% no-repeat;opacity:.58;transform:rotate(-2deg);pointer-events:none}
+.document-heading{position:relative}
+.document-heading h1{position:relative;isolation:isolate;width:fit-content;padding-bottom:9px;margin-bottom:-9px}
+.document-heading h1:after{content:'';position:absolute;left:-7px;right:-9px;bottom:-6px;height:14px;background:url('assets/paint-underline.svg') center/100% 100% no-repeat;transform:rotate(-1.1deg);opacity:.83;pointer-events:none;z-index:-1}
+.rules-section{position:relative;border-top-color:transparent}
+.rules-section:before{content:'';position:absolute;left:0;right:0;top:0;height:7px;background:url('assets/worn-line.svg') center/100% 100% no-repeat;opacity:.64;pointer-events:none}
+.rules-section h2>span{position:relative;text-align:center;margin-left:-10px;min-width:44px;isolation:isolate}
+.rules-section h2>span:before{content:'';position:absolute;inset:-4px -4px -2px;background:url('assets/marker-circle.svg') center/100% 100% no-repeat;opacity:.58;transform:rotate(-9deg);pointer-events:none;z-index:-1}
+.rules-section:nth-of-type(2n) h2>span:before{transform:rotate(12deg) scaleX(-1);opacity:.42}
+.rules-section:nth-of-type(3n):after{content:'';position:absolute;right:-51px;top:32px;width:27px;height:27px;background:linear-gradient(48deg,transparent 45%,#62654a 46%,#62654a 49%,transparent 50%),linear-gradient(-44deg,transparent 46%,#62654a 47%,#62654a 50%,transparent 51%);opacity:.5;pointer-events:none;transform:rotate(-8deg)}
+@media(max-width:1100px){.tyre-left{left:-135px;width:245px;opacity:.65}.tyre-right{right:-155px;opacity:.6}.rules-section:nth-of-type(3n):after{right:-24px;width:18px;height:18px}.desktop-toc:after{width:132px;height:108px}}
+@media(max-width:760px){.page-art{-webkit-mask-image:linear-gradient(90deg,#000 0%,transparent 15%,transparent 75%,#000 100%);mask-image:linear-gradient(90deg,#000 0%,transparent 15%,transparent 75%,#000 100%)}.tyre-left{width:160px;height:1100px;left:-134px;top:300px;transform:rotate(9deg);opacity:.6}.tyre-right{width:175px;height:1000px;right:-102px;top:-150px;transform:rotate(-21deg);opacity:.54}.document-heading h1{padding-bottom:7px;margin-bottom:-7px}.document-heading h1:after{left:-4px;right:-5px;bottom:-7px;height:11px;transform:rotate(-2deg)}.document-heading:after{content:'';position:absolute;right:0;top:45px;width:52px;height:48px;background:url('assets/marker-sketch.svg') center/contain no-repeat;opacity:.55;transform:rotate(-12deg);pointer-events:none}.rules-section h2>span{margin-left:-6px;min-width:28px}.rules-section h2>span:before{inset:-5px -4px -3px;opacity:.57}.rules-section:before{height:5px}.mobile-toc+.rules-section:before{display:none}.rules-section:nth-of-type(3n):after{display:none}.mobile-toc{border-top:0;position:relative}.mobile-toc:before{content:'';position:absolute;left:0;right:0;top:0;height:5px;background:url('assets/worn-line.svg') center/100% 100% no-repeat;opacity:.6;pointer-events:none}}
+@media(prefers-reduced-motion:reduce){.page-art,.page-art *{animation:none!important}}
+.header{background:var(--bg)}
+.rules-section h2>span{align-self:start;height:30px;line-height:30px}
+@media(max-width:760px){.rules-section h2>span{height:24px;line-height:24px}}

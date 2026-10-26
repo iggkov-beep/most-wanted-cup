@@ -1,0 +1,33 @@
+/* High-contrast, marker-drawn navigation in the tournament identity. */
+.toc-label{font-family:LoosExtended,Loos,sans-serif;font-size:13px;line-height:1.3;font-weight:900;letter-spacing:.1px;color:var(--text);margin-bottom:26px}
+.toc-label:after{height:8px;opacity:.9;bottom:-11px;right:-15px}
+.desktop-toc nav{gap:7px;margin-left:-5px}
+.desktop-toc nav a,.mobile-toc nav a{position:relative;isolation:isolate;display:grid;grid-template-columns:30px minmax(0,1fr);align-items:center;gap:8px;min-height:43px;padding:9px 8px;color:var(--text);font-family:Loos,sans-serif;font-size:12.5px;line-height:1.3;font-weight:700;text-transform:uppercase;letter-spacing:.15px;transition:color .15s ease}
+.desktop-toc nav a:before,.mobile-toc nav a:before{content:'';position:absolute;inset:-2px -4px;z-index:-1;pointer-events:none;background:url('assets/toc-paint.svg') center/100% 100% no-repeat;opacity:0;transform:rotate(-1deg);transition:opacity .15s ease}
+.desktop-toc nav a:after,.mobile-toc nav a:after{content:'';position:absolute;left:45px;right:7px;bottom:0;border-bottom:1px solid #eeebd92b;transform:rotate(-.6deg);pointer-events:none}
+.desktop-toc nav a>span,.mobile-toc nav a>span{display:grid;place-items:center;align-self:center;width:28px;height:26px;padding:0;color:var(--accent);font-family:Loos,sans-serif;font-size:12px;font-weight:700;line-height:1;background:url('assets/marker-circle.svg') center/100% 100% no-repeat}
+.desktop-toc nav a:hover,.mobile-toc nav a:hover{color:var(--accent)}
+.desktop-toc nav a:hover:before,.mobile-toc nav a:hover:before{opacity:.11}
+.desktop-toc nav a[aria-current=true],.mobile-toc nav a[aria-current=true]{color:var(--bg)}
+.desktop-toc nav a[aria-current=true]:before,.mobile-toc nav a[aria-current=true]:before{opacity:1}
+.desktop-toc nav a[aria-current=true]:after,.mobile-toc nav a[aria-current=true]:after{border-color:transparent}
+.desktop-toc nav a[aria-current=true]>span,.mobile-toc nav a[aria-current=true]>span{color:var(--bg);background:none;border:1px solid #0d100c60;border-radius:48% 53% 46% 55%;transform:rotate(-6deg)}
+.desktop-toc:after{width:124px;height:93px;margin-top:25px;opacity:.85}
+@media(max-width:1100px){.toc-label{font-size:12px}.desktop-toc nav a{font-size:11.5px;padding:9px 6px;grid-template-columns:27px minmax(0,1fr);gap:6px}.desktop-toc nav a>span{width:25px;height:25px;font-size:11px}.desktop-toc nav a:after{left:40px}}
+@media(max-width:760px){.mobile-toc summary{font-family:LoosExtended,Loos,sans-serif;font-size:12px;font-weight:900;letter-spacing:.1px;text-transform:uppercase;color:var(--text)}.mobile-toc summary>span{font-family:Loos,sans-serif}.mobile-toc nav{gap:5px;padding:10px 3px 22px}.mobile-toc nav a{font-size:12px;grid-template-columns:29px minmax(0,1fr);padding:9px 6px;gap:8px}.mobile-toc nav a>span{font-size:11px}.mobile-toc nav a:after{left:44px}}
+@media(prefers-reduced-motion:reduce){.desktop-toc nav a,.mobile-toc nav a,.desktop-toc nav a:before,.mobile-toc nav a:before{transition:none}}
+/* The print is laid down along the document as the reader scrolls. */
+.page-art{position:absolute;inset:0;min-height:100%;height:auto}
+.tyre{height:var(--tyre-length,94vh);transform:none;top:0;transition:height 90ms linear;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 100px,#000 calc(100% - 90px),transparent 100%);mask-image:linear-gradient(180deg,transparent 0,#000 100px,#000 calc(100% - 90px),transparent 100%)}
+.tyre-left{top:75px;left:calc((100vw - 1280px)/2 - 64px);width:245px}
+.tyre-right{top:40px;right:-104px;width:260px;transform:scaleX(-1)}
+@media(max-width:1100px){.tyre-left{left:-92px;width:220px}.tyre-right{right:-124px;width:245px}}
+@media(max-width:760px){.tyre-left{left:-118px;width:160px;top:180px}.tyre-right{right:-112px;width:175px;top:40px}}
+@media(prefers-reduced-motion:reduce){.tyre{transition:none}}
+/* The tread rolls against the document scroll and coasts to a stop. */
+.tyre{background-position-y:var(--tread-shift,0px);transition:height 90ms linear,filter 180ms ease;contain:paint}
+.tyre-right{background-position-y:calc(var(--tread-shift,0px) * .85)}
+.page-art.is-rolling .tyre{filter:brightness(1.6)}
+@media(prefers-reduced-motion:reduce){.tyre{filter:none!important;transition:none}}
+/* Reduced motion keeps the user-driven roll with less travel and no extra glow. */
+

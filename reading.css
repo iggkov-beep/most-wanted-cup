@@ -1,0 +1,22 @@
+/* Text hierarchy follows the approved PDF; the typefaces remain original BB TEAM Loos. */
+.document-heading h1{color:var(--accent)}
+.introduction{font-size:16px;font-weight:700;line-height:1.55;text-align:justify;hyphens:auto;color:var(--text)}
+.rules-section h2{text-transform:uppercase;color:var(--accent)}
+.rule{font-weight:700;line-height:1.5;text-align:justify;hyphens:auto;margin-top:14px}
+.rule:not(.child-rule){display:block}
+.rule:not(.child-rule)>.rule-number{display:inline;margin-right:.4em;font-size:inherit;line-height:inherit;font-weight:700;color:var(--text)}
+.rule:not(.child-rule)>.rule-body{display:contents}
+.rule:not(.child-rule)>.rule-body>p:first-child{display:inline}
+.rule-body>p,.rule-body li{line-height:1.5;text-align:justify;hyphens:auto}
+.rule-body>p+p{margin-top:16px}
+.rule-heading{margin-top:22px}
+.child-rule{grid-template-columns:44px minmax(0,1fr);gap:14px}
+.child-rule>.rule-number{font-size:14px;font-weight:700;line-height:1.72;color:var(--text)}
+@media(max-width:760px){.introduction{font-size:14px;line-height:1.55}.rule{font-size:14px;line-height:1.55;margin-top:14px}.rule-body>p,.rule-body li{line-height:1.55}.child-rule{grid-template-columns:38px minmax(0,1fr);gap:12px}.child-rule>.rule-number{font-size:12px;line-height:1.8}.rule-heading{margin-top:21px}.rules-section h2{font-size:17px}}
+@media(max-width:360px){.rules-section h2{font-size:15px}}
+.introduction,.rule,.rule-body>p,.rule-body li{hyphens:none}
+@media(max-width:760px){.rule-body li{text-align:left}}
+.clause-link{color:var(--accent);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.clause-link:hover{color:var(--text)}
+a.rule-number:hover{color:var(--accent)!important;text-decoration:underline;text-underline-offset:4px}
+.clause-link{white-space:nowrap}
